@@ -39,6 +39,8 @@ public class SecurityConfig {
                 .antMatchers("/api/auth/login").permitAll() //인증 필요 없는 url
                 .anyRequest().authenticated()
                 .and()
+                .cors()  // CORS 설정을 활성화
+                .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS) //세션 사용 안함
                 .and()
                 .formLogin()

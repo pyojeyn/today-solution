@@ -2,6 +2,8 @@ package com.today_solution_server.demo.config;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -14,10 +16,15 @@ public class CorsConfig implements WebMvcConfigurer {
     @Value("${cors.allowedOrigin}")
     private String allowedUrl;
 
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
+
     @Override
     public void addCorsMappings(CorsRegistry registry) {
 
         log.info("CORS.allowedUrl={}", allowedUrl);
+        logger.info("PROD");
+        logger.info("cors.prod.allowedUrl={}", allowedUrl);
 
         registry.addMapping("/**")
                 .allowedOrigins(allowedUrl) // 허용할 출처

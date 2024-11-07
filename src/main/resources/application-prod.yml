@@ -30,4 +30,5 @@ server:
 logging:
   level:
     root: INFO  # 루트 로깅 레벨을 INFO로 설정
-    com.today_solution_server.demo: DEBUG  # 특정 패키지에 대한 로깅 레벨 설정 (예: demo 패키지)
+    com.today_solution_server.demo: INFO  # 특정 패키지에 대한 로깅 레벨 설정 (예: demo 패키지)
+    com.today_solution_server.demo.controller: DEBUG

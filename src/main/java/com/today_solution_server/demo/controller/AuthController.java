@@ -24,12 +24,8 @@ public class AuthController {
     private final KaKaoLoginHandler kaKaoLoginHandler;
     private final LogoutHandler logoutHandler;
 
-    @Value("${cors.allowedOrigin}")
-    private String allowedUrl;
-
     @PostMapping ("login")
     public KaKaoLoginResponseDto kakaoLogin(@RequestBody KaKaoLoginRequestDto reqBody) throws Exception {
-        log.info("allowedUrl 잘 들어오나 TEST={}", allowedUrl);
         return kaKaoLoginHandler.kakaoLogin(reqBody);
     }
 

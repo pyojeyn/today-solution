@@ -22,7 +22,7 @@ public class CorsConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
 
-        log.info("allowedUrl={}", allowedUrl);
+        log.info("======allowedUrl========{}", allowedUrl);
 
         registry.addMapping("/**")
                 .allowedOrigins(allowedUrl) // 허용할 출처

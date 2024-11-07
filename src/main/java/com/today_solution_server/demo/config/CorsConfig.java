@@ -25,7 +25,7 @@ public class CorsConfig implements WebMvcConfigurer {
         log.info("allowedUrl={}", allowedUrl);
 
         registry.addMapping("/**")
-                .allowedOrigins(allowedUrl) // 허용할 출처
+                .allowedOrigins("*") // 허용할 출처
                 .allowedHeaders("*")  // 허용할 헤더
                 .allowedMethods("GET", "POST", "PATCH", "DELETE") // 허용할 HTTP method
                 .allowCredentials(true) // 쿠키 인증 요청 허용

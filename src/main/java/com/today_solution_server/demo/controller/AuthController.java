@@ -8,6 +8,7 @@ import com.today_solution_server.demo.jwt.JwtUtils;
 import com.today_solution_server.demo.securityUser.CustomUserDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,8 +24,12 @@ public class AuthController {
     private final KaKaoLoginHandler kaKaoLoginHandler;
     private final LogoutHandler logoutHandler;
 
+    @Value("${cors.allowedOrigin}")
+    private String allowedUrl;
+
     @PostMapping ("login")
     public KaKaoLoginResponseDto kakaoLogin(@RequestBody KaKaoLoginRequestDto reqBody) throws Exception {
+        log.info("allowedUrl 잘 들어오나 TEST={}", allowedUrl);
         return kaKaoLoginHandler.kakaoLogin(reqBody);
     }
 

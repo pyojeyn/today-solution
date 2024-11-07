@@ -20,6 +20,9 @@ kakao:
   clientId: ${KAKAO_CLIENT_ID}
   redirectUri: ${KAKAO_REDIRECT_URL}
 
+cors:
+  allowedOrigin: ${DEFAULT_URL}
+
 
 server:
   port: 8080

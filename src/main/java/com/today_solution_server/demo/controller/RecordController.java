@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 @RestController
-@RequestMapping("record")
+@RequestMapping("/api/record")
 @RequiredArgsConstructor
 @Slf4j
 public class RecordController {

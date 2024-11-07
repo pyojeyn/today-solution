@@ -36,7 +36,7 @@ public class SecurityConfig {
         http.csrf().disable()
                 .authorizeRequests()
 //                .antMatchers("/login", "/swagger-ui/**", "/swagger-resources/**").permitAll() //인증 필요 없는 url
-                .antMatchers("/auth/login").permitAll() //인증 필요 없는 url
+                .antMatchers("/api/auth/login").permitAll() //인증 필요 없는 url
                 .anyRequest().authenticated()
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS) //세션 사용 안함

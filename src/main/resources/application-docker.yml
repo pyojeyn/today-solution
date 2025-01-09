@@ -22,3 +22,6 @@ kakao:
 
 cors:
   allowedOrigin: ${CORS_ALLOWED_ORIGIN}
+
+server:
+  port: 9090
